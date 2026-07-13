@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "H5toPDF",
+  "version": "1.0.0",
+  "description": "高保真度网页转PDF解决方案，完美保留所有样式和布局",
+  "icons": {
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "permissions": ["activeTab", "downloads", "scripting", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "scripts": ["src/lib/jspdf.umd.min.js", "src/background/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/lib/modern-screenshot.js", "src/content/content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["src/lib/*.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline'",
+    "sandbox": "script-src 'self' 'unsafe-inline' 'unsafe-eval'; object-src 'none'"
+  }
+}
