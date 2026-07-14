@@ -1,6 +1,6 @@
 # HTML5 to PDF WebExtension (Firefox)
 
-这是一个正处于**初步开发阶段**的 [Mozilla-Firefox](https://github.com/mozilla-firefox/firefox) 扩展插件，旨在提供一种高保真度的网页转 PDF 解决方案。
+这是一个正处于**初步开发阶段**的 [Mozilla-Firefox](https://github.com/mozilla-firefox/firefox) 扩展插件，旨在提供一种高保真度的网页输出为 PDF 解决方案。这也太难了😭
 
 ### 核心功能
 大多数网页转 PDF 工具（包括浏览器内置的“打印”功能）在处理现代 HTML5 页面时，往往会因为responsive web media queries或复杂的 CSS 布局等而导致排版错乱。
